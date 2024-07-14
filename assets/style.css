@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&display=swap');
+
+*{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+}
+
+body{
+      font-family: "Playwrite CU", cursive;
+      font-weight: 300;
+}
+
+.container{
+      width: 900px;
+      max-width: 85vw;
+      margin: auto;
+      padding-top: 1rem;
+}
+
+.container header h1{
+      font-weight: bold;
+}
+.listproduct{
+      padding-top: 1rem;
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 1rem;
+}
+
+.listproduct .item{
+      position: relative;
+      background-color: #ffffff;
+      padding: 0;
+      margin: 0;
+      font-size: 0.8rem;
+
+}
+
+
+.listproduct .category{
+      padding-top: 1.5rem;
+      color: #939393;
+}
+.listproduct .item img{
+      width: 100%;
+      border-radius: 0.5rem;
+}
+
+.listproduct .button{
+      display: block;
+      position: absolute;
+      height: 2.2rem;
+      width: 65%;
+      top: 58%;
+      left: 18%;
+      font-family: sans-serif;
+}
+
+.add-to-cart{
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      align-items: center;
+      background-color: #ffffff;
+      border-radius: 1.9rem;
+      font-size: 0.75rem;
+      border: 1px solid hsl(14, 86%, 42%);
+}
+
+.add-to-cart img{
+      max-width: 30px;
+}
+
+.amount{
+      display: none;
+}
+
+
+
+.listproduct .category{
+      font-size: 0.65rem;
+}
+
+/* .listProduct.name{} */
+
+.price{
+      color:hsl(14, 86%, 42%);
+} 
