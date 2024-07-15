@@ -7,25 +7,49 @@
   <link rel="stylesheet" href="./assets/style.css">
   <script src="https://kit.fontawesome.com/ea05bd8970.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="showCart">
      <section class="container">
-          <header><h1>Desserts</h1></header>
+          <header><h1>Desserts</h1><div id="showCart2"><img src="./assets/images/icon-add-to-cart.svg" alt=""> <section>0</section></div></header>
 
           <div class="listproduct">
-               <div class="item">
+               <!-- <div class="items">
                     <img src="/assets/images/image-waffle-desktop.jpg" alt="">
                     <div class="button">
                          <div class="add-to-cart"><img src="./assets/images/icon-add-to-cart.svg" alt=""> Add to Cart</div>
-                         <div class="amount"><img src="./assets/images/icon-decrement-quantity.svg" alt=""> <p id="count">0</p> <img src="./assets/images/icon-increment-quantity.svg" alt=""></div>
                     </div>
                     <p class="category">Waffle</p>
                     <p class="name">Waffle with Berries</p>
                     <div class="price">$7.50</div>
-               </div>
+               </div> -->
           </div>
      </section>
 
-
+     <section class="cartTab">
+          <div class="cartTab-header"><h1>Your Cart </h1> (  <h1 id="counter"> 0 </h1>  )</div>
+               <div class="listCart">
+                    <div class="item">
+                         <div class="image">
+                              <img src="./assets/images/image-waffle-thumbnail.jpg" alt="">
+                         </div>
+                         <div class="category">
+                              Waffle
+                         </div>
+                         <div class="name">
+                              Waffle with Berries
+                         </div>
+                         <div class="price">
+                              $6.50
+                         </div>
+                         <div class="quantity">
+                              <span class="minus">-</span>
+                              <span>1</span>
+                              <span class="plus">+</span>
+                         </div>
+                    </div>
+               </div>
+          <button id="confirmOrder">Confirm Order</button>
+          <button id="closeMenu"> <i class="fa-regular fa-circle-xmark"></i> Close Menu</button>
+     </section>
 
      <script src="./assets/script.js"></script>
 </body>
