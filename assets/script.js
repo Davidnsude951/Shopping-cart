@@ -121,7 +121,7 @@ listCartHtml.addEventListener(`click`,event=>{
 })
 
 const changeQuantity = (product_id, type) =>{
-      let positionItemInCart = carts.findIndex((value) => value.product_id= product_id)
+      let positionItemInCart = carts.findIndex((value) => value.product_id== product_id)
       if(positionItemInCart >=0){
             switch(type){
                   case `plus`:
