@@ -95,7 +95,7 @@ const addCartToHtml = ()=>{
                               ${info.name}
                          </div>
                          <div class="price">
-                              $${info.price}
+                              $${info.price = cart.quantity}
                          </div>
                          <div class="quantity">
                               <span class="minus">-</span>
@@ -107,39 +107,33 @@ const addCartToHtml = ()=>{
       }
       iconCartSpan.innerText = totalQuantity;
 }
-
-listCartHtml.addEventListener(`click`,event=>{
-      let positionClick=event.target;
-      if(positionClick.classList.contains(`minus`)||positionClick.classList.contains(`plus`)){
-            let product_id = positionClick.parentElement.dataset.id;
-            let type =`minus`;
-            if(positionClick.classList.contains(`plus`)){
-                  type=`plus`;
-            }
-            changeQuantity(product_id, type);
+listCartHtml.addEventListener('click', (event) => {
+      if (event.target.classList.contains('minus')) {
+        changeQuantity(event.target.parentElement.dataset.id, 'minus');
+      } else if (event.target.classList.contains('plus')) {
+        changeQuantity(event.target.parentElement.dataset.id, 'plus');
       }
-})
-
-const changeQuantity = (product_id, type) =>{
-      let positionItemInCart = carts.findIndex((value) => value.product_id== product_id)
-      if(positionItemInCart >=0){
-            switch(type){
-                  case `plus`:
-                        carts[positionItemInCart].quantity= carts[positionItemInCart].quantity + 1;
-                        break;
-                  default:
-                        let valueChange = carts[positionItemInCart].quantity -1;
-                        if(valueChange>0){
-                              carts[positionItemInCart].quantity = valueChange;
-                        }else{
-                              carts.splice(positionItemInCart,1);
-                        }
-                        break
+    });
+    
+    const changeQuantity = (product_id, type) => {
+      let positionItemInCart = carts.findIndex((value) => value.product_id == product_id);
+      if (positionItemInCart >= 0) {
+        switch (type) {
+          case 'plus':
+            carts[positionItemInCart].quantity++;
+            break;
+          case 'minus':
+            if (carts[positionItemInCart].quantity > 1) {
+              carts[positionItemInCart].quantity--;
+            } else {
+              carts.splice(positionItemInCart, 1);
             }
+            break;
+        }
+        addCartToMemory();
+        addCartToHtml();
       }
-      addCartToMemory();
-      addCartToHtml();
-}
+    };
 const initApp = () =>{//\ its literally just a function
       //get data from json
       fetch(`products.json`)
